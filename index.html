@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="userAuth">
+<html lang="en" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="userAuth">
 	<head>
 		<title>User Auth</title>
 		<meta charset="UTF-8">
@@ -15,10 +15,18 @@
 		<!--[if IE]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+		
 	</head>
 	<body>
 		<div id="site-view" ng-view></div>
 
+
+		<!-- This script is to make IE play nice -->
+		<!--[if lte IE 8]>
+	    	<script src="js/json3.min.js"></script>
+	    <![endif]-->
+	    <!-- jQuery 1.9.1 -->
+	    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<!-- AngularJS main file -->
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
 		<!-- AngularJS resource files -->
