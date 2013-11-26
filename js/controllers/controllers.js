@@ -1,6 +1,25 @@
-var controllers = angular.module('userAuth', ['userAuth.services']);
+var app = angular.module('userAuth', ['userAuth.services', 'userAuth.directives', 'ngRoute']);
 
+app.config(['$routeProvider', function($routeProvider){
+	$routeProvider.when('/login', {
+		templateUrl: 'views/login.html',
+		controller: 'LoginCtrl',
+		access: {
+			isPublic : true
+		}
+	}).when('/home',{
+		templateUrl: 'views/home.html',
+		controller: 'HomeCtrl',
+		access: {
+			isPublic : false
+		}
+	}).otherwise({redirectTo:'/'});
+}]);
 
-controllers.controller('loginController', ['$scope', '$http', 'User', function($scope, $http, UserService){
+app.controller('LoginCtrl', ['$scope', '$http', 'UserService', function($scope, $http, User){
+
+}]);
+
+app.controller('HomeCtrl', ['$scope', 'UserService', function($scope, User){
 
 }]);
