@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userAuth">
+	<head>
+		<title>User Auth</title>
+		<meta charset="UTF-8">
+		<!-- Kick IE in the rear and keep them out of compat mode. -->
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+		<!-- Site style sheet -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="site-view" ng-view></div>
+
+		<!-- AngularJS main file -->
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+		<!-- AngularJS resource files -->
+		<script type="text/javascript" src="js/vendor/angular/angular-resource.min.js"></script>
+		<script type="text/javascript" src="js/services/services.js"></script>
+		<script type="text/javascript" src="js/directives/directives.js"></script>
+		<script type="text/javascript" src="js/controllers/controllers.js"></script>
+		<script type="text/javascript" src="js/vendor/bootstrap/bootstrap.js"></script>
+
+		<!-- This next script is for bootstrap to work correct responsive with IE -->
+		<script type="text/javascript" src="js/vendor/bootstrap/respond.min.js"></script>
+	</body>
+</html>
