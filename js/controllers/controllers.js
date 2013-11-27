@@ -17,11 +17,9 @@ app.config(['$routeProvider', function($routeProvider){
 }]);
 
 app.controller('LoginCtrl', ['$scope', '$http', 'UserService', function($scope, $http, User){
-	$scope.login = function(){
-		// Here set the path to your backend script to verify user info.
-		// The html input on the login page have a ng-model of user and pass.
-		var config = {method: 'post', url : 'path to your file',{user: $scope.user, pass: $scope.pass}};
-		
+	$scope.loginUser = function(){
+
+		var config = { method: 'post', url : 'path to your file',params : {user: $scope.user, pass: $scope.pass}};
 		$http(config).success(function(response, status){
 			if(status === '200'){
 				if(response.success === true){
