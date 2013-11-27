@@ -17,7 +17,9 @@ app.config(['$routeProvider', function($routeProvider){
 }]);
 
 app.controller('LoginCtrl', ['$scope', '$http', 'UserService', function($scope, $http, User){
+	$scope.login = function(){
 
+	};
 }]);
 
 app.controller('HomeCtrl', ['$scope', 'UserService', function($scope, User){
