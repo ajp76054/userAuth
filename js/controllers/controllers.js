@@ -18,7 +18,24 @@ app.config(['$routeProvider', function($routeProvider){
 
 app.controller('LoginCtrl', ['$scope', '$http', 'UserService', function($scope, $http, User){
 	$scope.login = function(){
-
+		// Here set the path to your backend script to verify user info.
+		// The html input on the login page have a ng-model of user and pass.
+		var config = {method: 'post', url : 'path to your file',{user: $scope.user, pass: $scope.pass}};
+		
+		$http(config).success(function(response, status){
+			if(status === '200'){
+				if(response.success === true){
+					// The response is looking for a json object with a poperty of success set to true
+					// If true is return we update the user service to set isLogged to true and start the expire function.
+					User.isLogged = true;
+					User.expire(User, 21600000); // 6hrs
+				}else{
+					// Do something on error
+				}
+			}
+		}).error(function(error){
+			console.log(error);
+		});
 	};
 }]);
 
